@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/calculateBtn"
+            android:layout_width="124dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_bg"
+            android:text="@string/calculate"
+            android:textColor="#FFFFFF"
+
+            android:textColorHighlight="#673AB7"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#673AB7"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/queryInput"
+            app:layout_constraintTop_toBottomOf="@+id/queryInput" />
+
+        <EditText
+            android:id="@+id/queryInput"
+            android:layout_width="359dp"
+            android:layout_height="146dp"
+            android:layout_marginTop="70dp"
+            android:autofillHints=""
+            android:background="@drawable/search_bar_bg"
+            android:cursorVisible="true"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/kfc_drumstick"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColorHint="#C6958D8D"
+            android:textColorLink="#3F51B5"
+            android:textCursorDrawable="@null"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789"
+        app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ListView
+            android:id="@+id/_dynamic"
+            android:layout_width="359dp"
+            android:layout_height="374dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/result_bg"
+            app:layout_constraintEnd_toEndOf="@+id/calculateBtn"
+            app:layout_constraintStart_toStartOf="@+id/queryInput"
+            app:layout_constraintTop_toBottomOf="@+id/calculateBtn">
+
+        </ListView>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/result"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/_dynamic"
+            app:layout_constraintStart_toStartOf="@+id/_dynamic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
